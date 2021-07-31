@@ -1,0 +1,12 @@
+set terminal pngcairo enhanced font "open sanse,20" fontscale 1.0 size 1920, 1080 # Задаем режим, шрифт и его размер, размер графика в пикселях
+set output 'output.png' # Называем имя файла в который будем записывать картинку
+# set title "Simple Plots" # Если хотим - можем написать заголовок
+# set title  font ",20" textcolor lt -1 norotate
+set xrange [ * : * ] noreverse writeback # Автоматические пределы по осям
+set yrange [ * : * ] noreverse writeback # Автоматические пределы по осям
+# NO_ANIMATION = 1
+set xlabel 'Wavelength, micrometeres' # Подписываем ось x
+set ylabel 'Transmittance' # Подписываем ось y
+plot 'spectra\spectrum.txt' linecolor 3 lw 2 title 'Sample spectrum' with lines # строим спектр из файла с заданным название
+										# стандартным цветом номер 3, ширина линии 2
+										# подписываем оси и указываем что соединяем точки линиями
